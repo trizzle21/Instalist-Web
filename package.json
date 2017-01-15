@@ -1,0 +1,22 @@
+{
+  "name": "shoppinglistbackend",
+  "version": "1.0.0",
+  "description": "socket based communication for shopping list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trizzle21/Android-Shopping-List-Backend.git"
+  },
+  "author": "Tyler Ross, Devin Wells",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trizzle21/Android-Shopping-List-Backend/issues"
+  },
+  "homepage": "https://github.com/trizzle21/Android-Shopping-List-Backend#readme",
+  "dependencies": {
+    "nodejs": "0.0.0"
+  }
+}
