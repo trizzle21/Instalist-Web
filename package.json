@@ -2,7 +2,7 @@
   "name": "shoppinglistbackend",
   "version": "1.0.0",
   "description": "socket based communication for shopping list app",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
