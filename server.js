@@ -5,6 +5,11 @@ var app = express();
 var server = app.listen(3000);
 var io = require('socket.io').listen(server);
 
+var MongoClient = require('mongodb').MongoClient
+  , assert = require('assert');
+
+var url = 'mongodb://localhost:27017/Shopping-List-Backend';
+
 
 app.set('views', './views')
 app.set('view engine', 'pug')
@@ -14,6 +19,10 @@ app.use('/static', express.static('static'))
 app.get('/', function (req, res) {
 	res.render('index')
 })
+
+
+
+
 
 
 /*
