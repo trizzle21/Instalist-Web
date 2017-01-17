@@ -18,6 +18,7 @@
   "homepage": "https://github.com/trizzle21/Android-Shopping-List-Backend#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "mongodb": "^2.2.21",
     "nodejs": "0.0.0"
   }
 }
