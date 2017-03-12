@@ -20,15 +20,31 @@ app.get('/', function (req, res) {
 	res.render('index')
 })
 
+app.get('/api/listoflists', function(req,res){
+
+	//Need to call 
+	var listoflists= [{}];
+
+
+	res.json(listoflists)
+}
+
+
+
 
 io.on('connection', function(socket){
   console.log('a user connected');
 });
 
 
+
+
+
+
 /*
 "User Schema"
 { 
+  _id:1,
   firstName: "Tyler",
   lastName: "Ross",
   age: 24,
@@ -41,6 +57,7 @@ io.on('connection', function(socket){
 
 "Group Schema"
 {
+	_id:2,
 	groupName: "Ross Family",
 	size:3,
 	id: 14382045,
@@ -54,7 +71,10 @@ io.on('connection', function(socket){
 
 List
 {
+	_id:2,
 	listName: "Grocery 10/27",
+	creator: 1,
+	timeCreated: ,
 	listItem: [
 		"cheese",
 		"bread",
