@@ -1,6 +1,6 @@
 # Android-Shopping-List-Backend
 
-Backend Service for Sync'd Grocery Store Apps
+Backend Service for Real Time Grocery Store Apps
 
 ## Table of Contents
 
@@ -18,4 +18,4 @@ In order to set up,
 
 Sets up all the required packages from package.json.
 
- 
+
