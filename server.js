@@ -20,14 +20,39 @@ app.get('/', function (req, res) {
 	res.render('index')
 })
 
-app.get('/api/listoflists', function(req,res){
 
+
+app.route('/api/UserLists')
+
+
+	.get(function(req,res){
+
+	}
 	//Need to call 
-	var listoflists= [{}];
+
+app.route('/api/User/:userID')
+	//has a get, post and delete
+	.get(function(req,res){
+		//Gets a certain user
+	})
+	
+	.post(function(req,res){
+		//Creates a User
+	})
 
 
-	res.json(listoflists)
-}
+app.route('/api/Group/:groupID')
+	//Has a get, post
+
+
+
+app.route('/api/Group/:groupID/List/')
+	//only has get
+
+
+
+app.route('/api/Group/:groupID/List/:listID')
+	//has a get, post, delete
 
 
 
