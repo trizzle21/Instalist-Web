@@ -1,4 +1,4 @@
-# Android-Shopping-List-Backend
+# Instalist-Web
 
 Backend Service for Real Time Grocery Store Apps
 
@@ -14,7 +14,7 @@ Version 1.0
 
 In order to set up, 
 
-`` npm install 
+``` npm install ```
 
 Sets up all the required packages from package.json.
 

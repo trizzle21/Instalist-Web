@@ -8,12 +8,19 @@ var io = require('socket.io').listen(server);
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 
+var routes = require('./api/routes/');
+var controllers = require('./api/controllers/');
+
+// var models = require('./routes/users');
+
+
+
 var url = 'mongodb://localhost:27017/Shopping-List-Backend';
 
 
-app.set('views', './views')
-app.set('view engine', 'pug')
-app.use('/static', express.static('static'))
+app.set('views', './views');
+app.set('view engine', 'pug');
+app.use('/static', express.static('views'));
 
 
 app.get('/', function (req, res) {
@@ -27,7 +34,7 @@ app.route('/api/UserLists')
 
 	.get(function(req,res){
 
-	}
+	})
 	//Need to call 
 
 app.route('/api/User/:userID')

@@ -1,0 +1,45 @@
+{
+  "name": "shoppinglistbackend",
+  "version": "1.0.0",
+  "description": "socket based communication for shopping list app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm-run-all --parallel watch:server watch:build",
+    "watch:build": "webpack --watch",
+    "watch:server": "nodemon \"./server.js\" && webpack --watch \"./views/index.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trizzle21/Android-Shopping-List-Backend.git"
+  },
+  "author": "Tyler Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trizzle21/Android-Shopping-List-Backend/issues"
+  },
+  "homepage": "https://github.com/trizzle21/Android-Shopping-List-Backend#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "bcrypt": "^1.0.3",
+    "express": "^4.14.0",
+    "jsx-loader": "^0.13.2",
+    "mongodb": "^2.2.21",
+    "nodejs": "0.0.0",
+    "pug": "^2.0.0-rc.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-redux": "^4.0.8",
+    "react-tap-event-plugin": "^3.0.2",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^1.15.0"
+  },
+  "devDependencies": {
+    "babel-preset-es2016": "^6.24.1",
+    "webpack": "^1.14.0"
+  }
+}
