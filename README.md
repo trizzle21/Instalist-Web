@@ -14,8 +14,8 @@ Version 1.0
 
 In order to set up, 
 
-`` npm install ```
+``` npm install ```
 
 Sets up all the required packages from package.json.
 
-## TODO: NEED TO EXPLAIN VAGRANT DOCKER SETUP
+
