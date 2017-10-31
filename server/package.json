@@ -1,0 +1,19 @@
+{
+  "name": "instalist-server",
+  "version": "1.0.0",
+  "description": "Server, backend services for instalist",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Tyler Ross",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.12.5",
+    "socket.io": "^2.0.4"
+  }
+}
