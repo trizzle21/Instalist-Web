@@ -5,15 +5,23 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-
 var groupSchema = new Schema({
-  name: {
-    type: String,
-    required: 'Kindly enter the name of the task'
+  name: String,
+  groupID:String,
+  description: String,
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
   },
-  users: {
-
-  },
+  members: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  memberCount: Number,
+  tasks: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Task'
+  }],
   status: {
     type: [{
       type: String,
@@ -21,9 +29,7 @@ var groupSchema = new Schema({
     }],
     default: ['pending']
   }
-
-
-
+  
 })
 
 

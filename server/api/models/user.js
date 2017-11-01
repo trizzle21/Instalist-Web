@@ -10,15 +10,17 @@ var userSchema = new Schema({
                 required: true, 
                 index: { unique: true } },
     password: { type: String, required: true }
+    email: { type: String, 
+             required: true
+            }
+
+
 });
 
-});
-
-
-userSchema.pre(save, function(next){
-    var user = this;
-}
 
 
 
-    )
+
+var User = mongoose.model("User", User_Schema);
+module.exports.User = User;
+

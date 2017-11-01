@@ -1,0 +1,9 @@
+{
+
+  "server": {
+    "port": 5000
+  },
+  "database_url" : "mongodb://localhost:27017/instalist-db"
+
+
+}

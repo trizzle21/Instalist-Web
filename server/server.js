@@ -1,8 +1,11 @@
 var express = require('express'),
 	http = require('http');
 
+
+var config = require('./config/index.js');
+
 var app = express();
-var server = app.listen(5000);
+var server = app.listen(config.server.port);
 var io = require('socket.io').listen(server);
 
 var MongoClient = require('mongodb').MongoClient
@@ -11,20 +14,21 @@ var MongoClient = require('mongodb').MongoClient
 // var controllers = require('./api/controllers/');
 
 
-// var userRoutes = require('./api/routes/userRoutes');
-
-// var models = require('./routes/users');
 
 
 
-var url = 'mongodb://localhost:27017/Shopping-List-Backend';
+var user = require('./api/routes/user');
+var groups = require('./api/routes/group');
+
+
+var url = config.database_url;
 
 
 app.get('/', function (req, res) {
-    res.status(200).json('instalist is alive!');
+    res.status(200).json("instalist is live");
 })
 
-// app.use('/api/users/', userRoutes);
+app.use('/api/users/', user);
 
 
 io.on('connection', function(socket){
@@ -36,48 +40,6 @@ io.on('connection', function(socket){
 
 
 
-/*
-"User Schema"
-{ 
-  _id:1,
-  firstName: "Tyler",
-  lastName: "Ross",
-  age: 24,
-  groups: [
-    "Ross Family",
-    "Stir",
-    "Mac > Windows"
-  ]
-}
-
-"Group Schema"
-{
-	_id:2,
-	groupName: "Ross Family",
-	size:3,
-	id: 14382045,
-	list_count: 0
-	lists: [
-		"Grocery 10/27",
-		"Grocery 11/4",
-		"Grocery 11/11"
-	]
-}
-
-List
-{
-	_id:2,
-	listName: "Grocery 10/27",
-	creator: 1,
-	timeCreated: ,
-	listItem: [
-		"cheese",
-		"bread",
-		"vodka"
-	]
-
-}
 
 
 
-*/
