@@ -19,6 +19,26 @@ var userSchema = new Schema({
 });
 
 
+
+userSchema.methods.setPassword = function(enteredPassword){
+    user = this;
+
+    bcrypt.genSalt(config.SALT_WORK_FACTOR, function(err, salt){
+        if (err) return next();
+
+
+        bcrypt.hash(enteredPassword, salt, function(err, hash){
+            if (err) return next();
+
+            user.password = hash;
+            next();
+        });
+
+    });
+});
+
+}
+
 userSchema.pre(save, function(next){ 
     user = this;
 
@@ -43,6 +63,7 @@ userSchema.pre(save, function(next){
 userSchema.methods.compare = function(enteredPassword, cp) {
     bcrypt.compare(enteredPassword, cp, function(err, isMatch){
         if (err) cp(next());
+        
         cp(null, isMatch)
     }
 }
