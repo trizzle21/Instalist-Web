@@ -13,6 +13,7 @@
     "express": "^4.16.2",
     "file-system": "^2.2.2",
     "http": "0.0.0",
+    "jsonwebtoken": "^8.1.0",
     "mongodb": "^2.2.33",
     "mongoose": "^4.12.5",
     "path": "^0.12.7",

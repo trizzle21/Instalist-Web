@@ -1,6 +1,9 @@
 
 var https = require('https');
 
+var jwt = require('jsonwebtoken');
+
+
 
 var userModel = require('../models/user');
 
@@ -50,4 +53,15 @@ module.export.login = function(request, response) {
 
 }
 
+module.export.verifyToken = function(token, callback) {
 
+    jwt.verifyToken(token, config.secret, function(err, decoded){
+        if (err){
+            callback(err);
+        } else {
+            callback(decoded.user.id)
+        }
+    })
+
+
+}
