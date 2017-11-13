@@ -5,9 +5,8 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var groupSchema = new Schema({
+var listSchema = new Schema({
   name: String,
-  _groupID:String,
   description: String,
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -17,7 +16,11 @@ var groupSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   }],
-  memberCount: Number,
+  itemCount: Number,
+  tasks: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Task'
+  }],
   status: {
     type: [{
       type: String,

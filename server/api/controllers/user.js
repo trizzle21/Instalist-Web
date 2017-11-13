@@ -21,13 +21,13 @@ module.export.register = function(req, res) {
 
     }
 
-    user.findOne({'username': request.body.email}).exec(function(err, returnedUser){
+    userModel.findOne({'username': request.body.email}).exec(function(err, returnedUser){
         if(err){
             req.status(500).json("error": "something broke!")
             return;
 
         } else if (returnedUser){
-            req.status(500).json("error": "username")
+            req.status(500).json("error": "username already exists")
             return;
         }
 
@@ -37,8 +37,13 @@ module.export.register = function(req, res) {
         user.email = request.body.email;
         user.setPassword(request.body.password);
 
-        user.save(
-
+        user.save(function(err)
+            if (err){
+                req.status(500).json("error": "Failed to save")
+                return;
+            } else {
+                //create rest of user
+            }
         )
 
 
@@ -50,6 +55,25 @@ module.export.register = function(req, res) {
 module.export.login = function(request, response) {
 
     //Login 
+    if (!request.body.email || !request.body.username || !request.body.password) {
+        req.status(500).json("error": "All Arguments are required!")
+        return;
+
+    } else {
+
+        userModel.findOne({'username': request.body.username}).exec(function(err, returnedUser){
+            if (err){
+               req.status(500).json("error": "username does not exist!")
+               return;
+            } else if (returnedUser.comparePassword(request.body.password, returnedUser.password){
+                //return json with user and token
+            }
+            }
+        })
+
+
+
+    }
 
 }
 

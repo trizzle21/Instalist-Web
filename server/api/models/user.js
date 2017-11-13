@@ -7,6 +7,7 @@ var mongoose = require('mongoose'),
 
 
 var userSchema = new Schema({
+    _id: Number,
     username: { type: String, 
                 required: true, 
                 index: { unique: true } },
@@ -18,7 +19,15 @@ var userSchema = new Schema({
 
 });
 
+userSchema.methods.generateToken = function(){
+    user = this;
 
+
+  return token = jwt.sign(user, config.secret, {
+     expiresIn: 60 * 60 * 24 // expires in 24 hours
+  });
+
+}
 
 userSchema.methods.setPassword = function(enteredPassword){
     user = this;
@@ -60,11 +69,14 @@ userSchema.pre(save, function(next){
 
 
 
-userSchema.methods.compare = function(enteredPassword, cp) {
+userSchema.methods.comparePassword = function(enteredPasswor, cp) {
     bcrypt.compare(enteredPassword, cp, function(err, isMatch){
-        if (err) cp(next());
+        if (err) {
+            return false;
+        } else {
+            return isMatch;
+        }
         
-        cp(null, isMatch)
     }
 }
 
