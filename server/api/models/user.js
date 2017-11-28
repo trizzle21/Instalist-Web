@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
     config = require('../config/index.js');
 ;
 
+var jwt = require('jsonwebtoken');
 
 var userSchema = new Schema({
     _id: Number,
@@ -80,7 +81,9 @@ userSchema.methods.comparePassword = function(enteredPasswor, cp) {
     }
 }
 
-
+module.exports.verifyToken = function(token, callback) {
+    if jwt.verify(config.)
+}
 
 
 

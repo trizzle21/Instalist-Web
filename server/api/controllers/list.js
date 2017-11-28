@@ -1,7 +1,5 @@
-
-
-
-var listModel = require('../models/list.js');
+var listModel = require('../models/list.js'),
+    config = require('../config/index.js');
 
 module.exports = {
     getList : function(req, res){
@@ -10,13 +8,15 @@ module.exports = {
     var token = req.headers['authorization'];
     if (!token) return next(); 
 
-    jwt.verify(token, process.env.JWT_SECRET, function(err, user) {
+    if(!)
+
+    jwt.verify(token, config.JWT_SECRET, function(err, user) {
         if (err) {
           return res.status(401).json({
             message: 'Please register Log in using a valid email to submit posts'
           });
         } else {
-            listSc
+            listModel. 
         }
      
 

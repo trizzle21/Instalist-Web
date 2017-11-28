@@ -11,11 +11,6 @@ var io = require('socket.io').listen(server);
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
 
-// var controllers = require('./api/controllers/');
-
-
-
-
 
 var user = require('./api/routes/user');
 var groups = require('./api/routes/group');
@@ -30,7 +25,7 @@ app.get('/', function (req, res) {
 
 app.use('/api/users/', user);
 
-
+oh
 io.on('connection', function(socket){
   console.log('a user connected');
 });

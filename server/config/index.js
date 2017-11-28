@@ -10,6 +10,8 @@ switch(NODE_ENV){
         configBuffer = fs.readFileSync(path.resolve(__dirname, 'dev.json'), 'utf-8');
     case "prod":
         configBuffer = fs.readFileSync(path.resolve(__dirname, 'prod.json'), 'utf-8');
+    case "test":  
+        configBuffer = fs.readFileSync(path.resolve(__dirname, 'test.json'), 'utf-8');
     default:
         configBuffer = fs.readFileSync(path.resolve(__dirname, 'dev.json'), 'utf-8');
 

@@ -7,6 +7,7 @@ var Schema = mongoose.Schema;
 
 var listSchema = new Schema({
   name: String,
+  _listid:Number,
   description: String,
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -24,9 +25,8 @@ var listSchema = new Schema({
   status: {
     type: [{
       type: String,
-      enum: ['active', 'inactive', 'pending']
+      enum: ['active', 'inactive']
     }],
-    default: ['pending']
   }
   
 })
