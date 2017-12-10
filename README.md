@@ -18,4 +18,8 @@ In order to set up,
 
 Sets up all the required packages from package.json.
 
+Highly recommend using nodemon (which it currently uses) which can be installed globally by 
 
+``` npm install nodemon -g```
+
+Otherwise, change nodemon to node in package.json

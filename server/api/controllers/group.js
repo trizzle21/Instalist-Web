@@ -53,7 +53,12 @@ module.exports = {
             group_new.save(function(err) {
 
                 if (err) {
-                    res.status(500).json({ "error": "Something went wrong. Please try again." });
+                    res.status(500).json(
+                        { 
+                            "error": "Bad request",
+                            "message": "All Fields required"
+                        }
+                    );
                     return;
                 } else {
                     
